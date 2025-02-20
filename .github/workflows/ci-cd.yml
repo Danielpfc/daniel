@@ -16,5 +16,17 @@ jobs:
       - name: Run tests
         run: echo "Running tests..."  # Ovaj deo možeš zameniti sa stvarnim testovima, ako i
 
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
+      - name: Install dependecies
+        run: |
+          python -p pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          pytest
 
